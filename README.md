@@ -18,6 +18,8 @@ You can test the Kafka producer with the Kafka Console Reader
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic mh.crime.report --from-beginning
 ```
 
+4. Submit Spark job with command `spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py`
+
 ### Udacity Data Streaming provided workspace instructions
 
 The path to Zookeeper and Kafka is /usr/bin:
