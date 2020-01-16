@@ -37,7 +37,7 @@ Running the Kafka Console Consumer in the Data Streaming provided workspace
 
 ## Answers to step 3 questions
 
-![Spark streaming job executing](docs/images/data_stream_2020-01-16_ 2020.png)
+![Spark streaming job executing](docs/images/data_stream_2020-01-16_2020.png)
 
 No screenshot of the Spark Streaming UI as the streaming continues, because job was executed in the provided sandbox.
 
