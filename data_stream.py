@@ -50,7 +50,11 @@ def run_spark_job(spark: SparkSession):
         .select("DF.*")
 
     # TODO select original_crime_type_name and disposition
-    distinct_table = service_table.select('original_crime_type_name', 'disposition').distinct()
+    distinct_table = service_table \
+        .select('original_crime_type_name', 'disposition', 'call_date_time') \
+        .withColumn('watermark_time', psf.to_timestamp(col='call_date_time', format="yyyy-MM-dd'T'HH:mm:ss.SSS")) \
+        .distinct() \
+        .withWatermark(eventTime='watermark_time', delayThreshold='1 minute')
 
     # count the number of original crime type
     agg_df = distinct_table.dropna() \
@@ -62,8 +66,8 @@ def run_spark_job(spark: SparkSession):
     # TODO write output stream
     query = agg_df \
         .writeStream \
-        .outputMode("complete") \
         .format("console") \
+        .outputMode("complete") \
         .start()
 
     # TODO attach a ProgressReporter

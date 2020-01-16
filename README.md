@@ -18,7 +18,8 @@ You can test the Kafka producer with the Kafka Console Reader
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic mh.crime.report --from-beginning
 ```
 
-4. Submit Spark job with command `spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py`
+4. Submit Spark job with command  
+`spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py`
 
 ### Udacity Data Streaming provided workspace instructions
 
@@ -26,21 +27,21 @@ The path to Zookeeper and Kafka is /usr/bin:
 * `/usr/bin/zookeeper-server-start config/zookeeper.properties`
 * `/usr/bin/kafka-server-start config/server.properties`
 
-Running the Kafka Console Consumer in the Data Streaming provided workspace 
+Running the Kafka Console Consumer in the Data Streaming provided workspace    
 ```cli
 /usr/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic mh.crime.report --from-beginning
 ```
 
-[Project Report](docs/project_report.md)
-
 ## Screenshots from step 2
-![Kafka producer](docs/images/Screenshot 2020-01-14 at 21.37.47.png)
+![Kafka producer](docs/images/producer_server_2020-01-14_2137.png)
 
 ## Answers to step 3 questions
 
-![Spark streaming job executing](docs/images/Screenshot 2020-01-15 at 21.45.21.png)
+![Spark streaming job executing](docs/images/data_stream_2020-01-16_ 2020.png)
 
 No screenshot of the Spark Streaming UI as the streaming continues, because job was executed in the provided sandbox.
+
+Zip-file with images in folder: [docs/two_images_no_sparkui.zip](docs/two_images_no_sparkui.zip)
 
 Write the answers to these questions in the README.md doc of your GitHub repo:
 
