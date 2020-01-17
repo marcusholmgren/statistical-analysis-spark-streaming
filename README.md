@@ -18,8 +18,11 @@ You can test the Kafka producer with the Kafka Console Reader
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic mh.crime.report --from-beginning
 ```
 
-4. Submit Spark job with command  
-`spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py`
+4. Submit Spark job with command 
+ 
+It is important to get the packages version correct. For __spark-2.4.4-bin-hadoop2.7__ the command to submit job is:
+
+`spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.4 --master local[*] data_stream.py`
 
 ### Udacity Data Streaming provided workspace instructions
 
@@ -32,18 +35,23 @@ Running the Kafka Console Consumer in the Data Streaming provided workspace
 /usr/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic mh.crime.report --from-beginning
 ```
 
-## Screenshots from step 2
-![Kafka producer](docs/images/producer_server_2020-01-14_2137.png)
+Submit spark job in the provided environment
 
-## Answers to step 3 questions
+`spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py`
 
-![Spark streaming job executing](docs/images/data_stream_2020-01-16_2020.png)
 
-No screenshot of the Spark Streaming UI as the streaming continues, because job was executed in the provided sandbox.
 
-Zip-file with images in folder: [docs/two_images_no_sparkui.zip](docs/two_images_no_sparkui.zip)
+## Screenshots from kafka-consumer-console
+![kafka-consumer-console](docs/images/kafka-consumer-console_2020-01-17.png)
 
-Write the answers to these questions in the README.md doc of your GitHub repo:
+## Answers and screenshots
+
+![Spark streaming job executing](docs/images/progress reporter_2020-01-17_at_2258.png)
+
+![Spark Streaming UI](docs/images/Spark_Streaming_UI_2020-01-17_at_2300.png)
+
+[three screenshots zip](images.zip)
+
 
 ### 1. How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
 When setting the `maxOffsetPerTrigger` to 1000 there where larger dumps of events processed.
