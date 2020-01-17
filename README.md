@@ -46,7 +46,7 @@ Submit spark job in the provided environment
 
 ## Answers and screenshots
 
-![Spark streaming job executing](docs/images/progress reporter_2020-01-17_at_2258.png)
+![Spark streaming job executing](docs/images/progress_reporter_2020-01-17_at_2258.png)
 
 ![Spark Streaming UI](docs/images/Spark_Streaming_UI_2020-01-17_at_2300.png)
 
